@@ -395,43 +395,47 @@ section { padding: var(--section-pad); }
 
 .navbar.scrolled .menu-btn span { background: var(--heading); }
 
-/* Mobile Menu */
+/* Mobile Menu Refinement */
 .mobile-menu {
     position: fixed;
     top: 0;
     right: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(10, 22, 40, 0.98);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: #0a1628; /* Solid dark for visibility */
     z-index: 2000;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 25px;
-    padding: 40px;
+    padding: 100px 30px 40px;
+    overflow-y: auto;
     opacity: 0;
     pointer-events: none;
-    transform: translateY(-20px);
-    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.7, 0, 0.3, 1), opacity 0.3s ease;
 }
 
 .mobile-menu.active {
     opacity: 1;
     pointer-events: all;
-    transform: translateY(0);
+    transform: translateX(0);
+}
+
+.mobile-menu-logo {
+    width: 200px;
+    margin-bottom: 40px;
 }
 
 .mobile-link {
     font-family: var(--font-head);
-    font-size: 2rem;
-    font-weight: 800;
+    font-size: 1.6rem;
+    font-weight: 700;
     color: var(--white);
+    padding: 12px 0;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
     transition: var(--ease);
-    opacity: 0;
-    transform: translateY(30px);
 }
 
 .mobile-menu.active .mobile-link {
@@ -455,13 +459,14 @@ section { padding: var(--section-pad); }
 .mobile-cta {
     background: var(--grad-main);
     color: var(--white) !important;
-    padding: 16px 44px;
-    border-radius: var(--radius-xl);
-    font-size: 1.1rem;
+    padding: 18px 0;
+    width: 100%;
+    border-radius: var(--radius-md);
+    font-size: 1rem;
     font-weight: 700;
-    margin-top: 20px;
-    opacity: 0;
-    transform: translateY(30px);
+    margin-top: 30px;
+    text-align: center;
+    display: block;
 }
 
 .mobile-menu.active .mobile-cta {
@@ -2184,9 +2189,9 @@ select.form-control option {
     
     .container { padding: 0 20px; }
     
-    .section-title { font-size: 1.85rem; line-height: 1.25; margin-bottom: 12px; }
-    .section-header { margin-bottom: 35px; }
-    .section-subtitle { font-size: 0.95rem; line-height: 1.6; }
+    .section-title { font-size: 1.7rem; line-height: 1.2; margin-bottom: 12px; }
+    .section-header { margin-bottom: 30px; }
+    .section-subtitle { font-size: 0.9rem; line-height: 1.5; color: var(--muted); }
     
     /* Hero Mobile Refinement */
     .hero { 
@@ -2240,8 +2245,8 @@ select.form-control option {
         border-radius: var(--radius-sm); 
     }
     
-    .hstat-num { font-size: 1.6rem; }
-    .hstat-label { font-size: 0.7rem; }
+    .hstat-num { font-size: 1.4rem; }
+    .hstat-label { font-size: 0.65rem; }
 
     /* Single Column Layouts */
     .solutions-grid,

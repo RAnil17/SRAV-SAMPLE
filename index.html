@@ -55,22 +55,19 @@
                 <button class="menu-btn" id="menu-btn"><span></span><span></span><span></span></button>
             </div>
         </div>
-    </nav>
-
-    <!-- Mobile Menu -->
+    </nav>    <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobile-menu">
-        <button class="close-menu" id="close-menu" aria-label="Close menu"><i class="fas fa-times"></i></button>
-        <div class="mobile-menu-content">
-            <img src="assets/logo.jpeg" alt="SRAV Products" class="mobile-logo">
-            <a href="#home" class="mobile-link">Home</a>
-            <a href="#about" class="mobile-link">About</a>
-            <a href="#solutions" class="mobile-link">Solutions</a>
-            <a href="#products" class="mobile-link">Products</a>
-            <a href="#industries" class="mobile-link">Industries</a>
-            <a href="#projects" class="mobile-link">Projects</a>
-            <a href="#services" class="mobile-link">Services</a>
-            <a href="#contact" class="mobile-link mobile-cta">Request Consultation</a>
+        <button class="close-menu" id="close-menu"><i class="fas fa-times"></i></button>
+        <div class="mobile-menu-logo">
+            <img src="assets/logo.jpeg" alt="SRAV Products" style="max-width:100%; border-radius:10px;">
         </div>
+        <a href="index.html" class="mobile-link">Home</a>
+        <a href="#about" class="mobile-link">About</a>
+        <a href="products.html" class="mobile-link">Products</a>
+        <a href="#solutions" class="mobile-link">Solutions</a>
+        <a href="#services" class="mobile-link">Services</a>
+        <a href="#industries" class="mobile-link">Industries</a>
+        <a href="contact.html" class="mobile-cta">Request Consultation</a>
     </div>
 
     <!-- ═══════════════════════════════════════════
@@ -189,6 +186,104 @@
             </div>
         </div>
     </section>
+
+    <!-- ═══════════════════════════════════════════
+         FEATURED PRODUCTS SECTION
+    ════════════════════════════════════════════ -->
+    <section id="featured-products" class="bg-light">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-tag">Market Leaders</div>
+                <h2 class="section-title">Our <span class="text-gradient">Featured Products</span></h2>
+                <p class="section-subtitle">Premium industrial solutions and consumer-grade appliances engineered for performance.</p>
+            </div>
+
+            <div class="products-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <!-- Product 1: Industrial RO -->
+                <div class="product-card" data-aos="fade-up">
+                    <div class="product-img">
+                        <img src="assets/Industrial-RO-Plant-Installation-Checklist-1080x400.webp" alt="Industrial RO Plant">
+                        <div class="product-badge-mode mode-industrial">Industrial</div>
+                    </div>
+                    <div class="product-info" style="padding: 25px;">
+                        <h3 style="margin-bottom: 10px;">Industrial RO Plants</h3>
+                        <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 20px;">High-capacity reverse osmosis systems with PLC integration for industries.</p>
+                        <a href="product-detail.html?id=i1" class="btn btn-primary w-full">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Product 2: Domestic RO -->
+                <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-img">
+                        <img src="assets/product-ro.png" alt="SRAV Active RO">
+                        <div class="product-badge-mode mode-ecommerce">Domestic</div>
+                    </div>
+                    <div class="product-info" style="padding: 25px;">
+                        <h3 style="margin-bottom: 10px;">SRAV Active RO</h3>
+                        <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 20px;">Premium counter-top RO with mineral fortification for healthy water.</p>
+                        <a href="product-detail.html?id=w3" class="btn btn-primary w-full">Add to Cart</a>
+                    </div>
+                </div>
+
+                <!-- Product 3: STP -->
+                <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-img">
+                        <img src="assets/Role-of-Sewage-Sludge-Treatment-Plant-in-STP.webp" alt="Sewage Treatment Plant">
+                        <div class="product-badge-mode mode-industrial">Wastewater</div>
+                    </div>
+                    <div class="product-info" style="padding: 25px;">
+                        <h3 style="margin-bottom: 10px;">Sewage Treatment Plants</h3>
+                        <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 20px;">Automated domestic and commercial sewage processing units.</p>
+                        <a href="product-detail.html?id=i2" class="btn btn-primary w-full">Request Quote</a>
+                    </div>
+                </div>
+
+                <!-- Product 4: Softener -->
+                <div class="product-card" data-aos="fade-up">
+                    <div class="product-img">
+                        <img src="assets/product-softener.png" alt="Water Softener">
+                        <div class="product-badge-mode mode-ecommerce">Appliance</div>
+                    </div>
+                    <div class="product-info" style="padding: 25px;">
+                        <h3 style="margin-bottom: 10px;">Water Softeners</h3>
+                        <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 20px;">Effective scale prevention for bathrooms and kitchens.</p>
+                        <a href="product-detail.html?id=w4" class="btn btn-primary w-full">Add to Cart</a>
+                    </div>
+                </div>
+
+                <!-- Product 5: Ice Machine -->
+                <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-img">
+                        <img src="assets/product-ice-machine.png" alt="Ice Maker Machine">
+                        <div class="product-badge-mode mode-ecommerce">Appliance</div>
+                    </div>
+                    <div class="product-info" style="padding: 25px;">
+                        <h3 style="margin-bottom: 10px;">Ice Cube Machines</h3>
+                        <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 20px;">Commercial grade ice generators for hospitality industries.</p>
+                        <a href="product-detail.html?id=p6" class="btn btn-primary w-full">Add to Cart</a>
+                    </div>
+                </div>
+
+                <!-- Product 6: Automation Panel -->
+                <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-img">
+                        <img src="assets/product-automation-panel-new.png" alt="Control Panel">
+                        <div class="product-badge-mode mode-industrial">Automation</div>
+                    </div>
+                    <div class="product-info" style="padding: 25px;">
+                        <h3 style="margin-bottom: 10px;">Automation Panels</h3>
+                        <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 20px;">Custom-built VFD, PLC, and MCC panels for process control.</p>
+                        <a href="product-detail.html?id=i5" class="btn btn-primary w-full">Request Quote</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center" style="margin-top: 60px;">
+                <a href="products.html" class="btn btn-white-solid" style="padding: 18px 50px;">View All Products <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
 
     <!-- ═══════════════════════════════════════════
          STATS BAR
