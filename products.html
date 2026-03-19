@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/ecommerce.css">
     <link rel="stylesheet" href="css/subpage.css">
 </head>
 <body>
@@ -30,7 +31,13 @@
                 <a href="index.html#services" class="nav-link">Services</a>
                 <a href="index.html#contact" class="nav-link nav-cta">Request Consultation</a>
             </div>
-            <button class="menu-btn" id="menu-btn"><span></span><span></span><span></span></button>
+            <div class="nav-actions" style="display:flex; align-items:center; gap:15px;">
+                <div class="cart-toggle" id="cart-toggle">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </div>
+                <button class="menu-btn" id="menu-btn"><span></span><span></span><span></span></button>
+            </div>
         </div>
     </nav>
     <div class="mobile-menu" id="mobile-menu">
@@ -61,35 +68,35 @@
     <section class="products bg-light" style="padding:100px 0">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <div class="section-tag">Full Catalog</div>
-                <h2 class="section-title">All <span class="text-gradient">Products</span></h2>
-                <p class="section-subtitle">ISO-certified machinery with 5-year warranty and full after-sales support.</p>
+                <div class="section-tag">Explore SRAV</div>
+                <h2 class="section-title">Industrial <span class="text-gradient">&amp; E-commerce</span> Catalog</h2>
+                <div class="search-bar-wrap" style="max-width:600px; margin: 30px auto 0; position:relative;">
+                    <i class="fas fa-search" style="position:absolute; left:20px; top:50%; transform:translateY(-50%); color:var(--muted);"></i>
+                    <input type="text" id="product-search" placeholder="Search products, systems, or services..." style="width:100%; padding: 18px 20px 18px 55px; border-radius:50px; border:1px solid var(--border); box-shadow: var(--shadow-sm); font-family:inherit; font-size:1rem; outline:none; transition:var(--ease);">
+                </div>
             </div>
-            <div class="products-grid">
-                <div class="product-card" data-aos="fade-up">
-                    <div class="product-img"><img src="assets/Industrial-RO-Plant-Installation-Checklist-1080x400.webp" alt="Industrial RO Plant" loading="lazy"><div class="product-overlay"><a href="contact.html" class="btn btn-white">Enquire Now</a></div><div class="product-tag">Water Treatment</div></div>
-                    <div class="product-info"><h3>Industrial RO Plants</h3><p>High capacity reverse osmosis systems — 100 LPH to 50,000 LPH for industrial water generation.</p><a href="contact.html" class="btn-link">Get Quote <i class="fas fa-arrow-right"></i></a></div>
+            <div class="shop-controls" data-aos="fade-up">
+                <div class="filter-row">
+                    <div class="type-toggle">
+                        <button class="type-btn active" data-type="all">All Items</button>
+                        <button class="type-btn" data-type="domestic">Consumer</button>
+                        <button class="type-btn" data-type="industrial">Industrial</button>
+                    </div>
+                    <div class="sort-wrap">
+                        <select id="sort-select" class="sort-select">
+                            <option value="default">Sort by: Featured</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="name-az">Name: A - Z</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="product-card" data-aos="fade-up" data-aos-delay="80">
-                    <div class="product-img"><img src="assets/Role-of-Sewage-Sludge-Treatment-Plant-in-STP.webp" alt="STP" loading="lazy"><div class="product-overlay"><a href="contact.html" class="btn btn-white">Enquire Now</a></div><div class="product-tag">Wastewater</div></div>
-                    <div class="product-info"><h3>Sewage Treatment Plants (STP)</h3><p>Automated domestic and commercial sewage processing with MBBR / SBR technology.</p><a href="contact.html" class="btn-link">Get Quote <i class="fas fa-arrow-right"></i></a></div>
-                </div>
-                <div class="product-card" data-aos="fade-up" data-aos-delay="160">
-                    <div class="product-img"><img src="assets/Aqua-Ultra-Water-Purifiers-3-600x600.jpg" alt="ETP" loading="lazy"><div class="product-overlay"><a href="contact.html" class="btn btn-white">Enquire Now</a></div><div class="product-tag">Wastewater</div></div>
-                    <div class="product-info"><h3>Effluent Treatment Plants (ETP)</h3><p>Industrial effluent treatment meeting PCB/CPCB discharge norms with ZLD options.</p><a href="contact.html" class="btn-link">Get Quote <i class="fas fa-arrow-right"></i></a></div>
-                </div>
-                <div class="product-card" data-aos="fade-up" data-aos-delay="240">
-                    <div class="product-img"><img src="assets/OWC-Machine-1024x768.jpg" alt="Organic Waste Composting" loading="lazy"><div class="product-overlay"><a href="contact.html" class="btn btn-white">Enquire Now</a></div><div class="product-tag">Waste Management</div></div>
-                    <div class="product-info"><h3>Organic Waste Composting Machines</h3><p>Compact and industrial-scale OWC machines — 50 kg/day to 2000 kg/day capacity.</p><a href="contact.html" class="btn-link">Get Quote <i class="fas fa-arrow-right"></i></a></div>
-                </div>
-                <div class="product-card" data-aos="fade-up" data-aos-delay="320">
-                    <div class="product-img"><img src="assets/product-automation-panel.png" alt="Automation Panel" loading="lazy"><div class="product-overlay"><a href="contact.html" class="btn btn-white">Enquire Now</a></div><div class="product-tag">Automation</div></div>
-                    <div class="product-info"><h3>Automation Control Panels</h3><p>Custom VFD, MCC, PLC-SCADA panels for industrial process monitoring and control.</p><a href="contact.html" class="btn-link">Get Quote <i class="fas fa-arrow-right"></i></a></div>
-                </div>
-                <div class="product-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="product-img"><img src="assets/product-ice-machine.png" alt="Ice Cube Maker" loading="lazy"><div class="product-overlay"><a href="contact.html" class="btn btn-white">Enquire Now</a></div><div class="product-tag">Equipment</div></div>
-                    <div class="product-info"><h3>Ice Cube Maker Machines</h3><p>Commercial stainless steel ice generators — 20 kg/day to 1000 kg/day for hospitality and food industry.</p><a href="contact.html" class="btn-link">Get Quote <i class="fas fa-arrow-right"></i></a></div>
-                </div>
+            </div>
+            <div class="filter-chips" id="filter-chips-dynamic">
+                <!-- Dynamic Chips -->
+            </div>
+            <div class="products-grid" id="products-grid-dynamic">
+                <!-- Dynamic Products -->
             </div>
         </div>
     </section>
@@ -110,9 +117,30 @@
         </div></div></div>
         <div class="footer-bottom"><div class="container footer-bottom-inner"><p>&copy; 2026 SRAV Products. All Rights Reserved.</p><div class="legal-links"><a href="#">Privacy Policy</a><a href="#">Terms</a></div></div></div>
     </footer>
+    <!-- Cart UI -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-panel" id="cart-panel">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <div class="close-cart" id="close-cart"><i class="fas fa-times"></i></div>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Dynamic Content -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-value">₹0</span>
+            </div>
+            <a href="checkout.html" class="btn btn-primary" style="width:100%; text-align:center;">Proceed to Checkout</a>
+        </div>
+    </div>
+
     <a href="https://wa.me/919876543210" class="floating-whatsapp" target="_blank"><i class="fa-brands fa-whatsapp"></i><span class="whatsapp-tooltip">Chat with us!</span></a>
     <button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="js/products-data.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
 </body>
 </html>

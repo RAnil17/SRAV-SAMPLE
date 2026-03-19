@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | SRAV Products</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/ecommerce.css">
+    <link rel="stylesheet" href="css/subpage.css">
+    <style>
+        .product-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; padding: 60px 0; align-items: start; }
+        .detail-img-card { background: var(--off-white); border-radius: var(--radius-xl); padding: 40px; border: 1px solid var(--border); position: sticky; top: 120px; }
+        .detail-img-card img { width: 100%; height: auto; object-fit: contain; }
+        .detail-info h1 { font-size: 2.8rem; margin-bottom: 20px; color: var(--heading); }
+        .detail-price { font-size: 2rem; font-weight: 800; color: var(--blue); margin-bottom: 30px; }
+        .detail-price span { font-size: 1rem; color: var(--muted); font-weight: 400; }
+        .detail-section { margin-bottom: 35px; }
+        .detail-section h3 { font-size: 1.2rem; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .detail-section h3 i { color: var(--blue); }
+        .feature-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .feature-list li { display: flex; align-items: center; gap: 10px; font-size: 0.95rem; }
+        .feature-list li i { color: var(--green); font-size: 0.8rem; }
+        .spec-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        .spec-table tr { border-bottom: 1px solid var(--border); }
+        .spec-table td { padding: 12px 0; font-size: 0.95rem; }
+        .spec-table td:first-child { font-weight: 700; color: var(--heading); width: 40%; }
+        
+        .quote-form-card { background: var(--off-white); padding: 30px; border-radius: var(--radius-lg); border: 1px solid var(--border); margin-top: 40px; }
+        .quote-form-card h4 { margin-bottom: 20px; font-size: 1.1rem; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px; }
+        .form-row input, .form-row textarea { width: 100%; padding: 10px; border-radius: 6px; border: 1px solid var(--border); }
+        .form-full { width: 100%; }
+        
+        @media (max-width: 991px) { .product-detail-grid { grid-template-columns: 1fr; } .detail-img-card { position: static; } .feature-list { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar scrolled">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.jpeg" alt="SRAV" class="nav-logo-img">
+                <span class="nav-brand"><span style="color:var(--heading)">SRAV</span>Products</span>
+            </a>
+            <div class="nav-actions" style="display:flex; align-items:center; gap:20px;">
+                <a href="products.html" class="btn-link">Back to Catalog</a>
+                <div class="cart-toggle" id="cart-toggle">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" style="margin-top: 100px;">
+        <div id="product-detail-root">
+            <!-- Dynamic Content -->
+        </div>
+    </div>
+
+    <!-- Cart UI -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-panel" id="cart-panel">
+        <div class="cart-header"><h3>Your Cart</h3><div class="close-cart" id="close-cart"><i class="fas fa-times"></i></div></div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-footer">
+            <div class="cart-total"><span>Total:</span><span id="cart-total-value">₹0</span></div>
+            <a href="checkout.html" class="btn btn-primary" style="width:100%; text-align:center;">Proceed to Checkout</a>
+        </div>
+    </div>
+
+    <script src="js/products-data.js"></script>
+    <script src="js/cart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+            const product = productsData.find(p => p.id === productId);
+
+            if (!product) {
+                document.getElementById('product-detail-root').innerHTML = `
+                    <div style="text-align:center; padding: 100px 0;">
+                        <h1>Product Not Found</h1>
+                        <a href="products.html" class="btn btn-primary" style="margin-top:20px;">Return to Catalog</a>
+                    </div>
+                `;
+                return;
+            }
+
+            const isEcommerce = product.mode === 'ecommerce';
+            
+            document.getElementById('product-detail-root').innerHTML = `
+                <div class="product-detail-grid">
+                    <div class="detail-img-card" data-aos="fade-right">
+                        <img src="${product.image}" alt="${product.name}">
+                    </div>
+                    <div class="detail-info" data-aos="fade-left">
+                        <div class="product-category">${product.category}</div>
+                        <h1>${product.name}</h1>
+                        <p class="product-desc" style="font-size:1.1rem; margin-bottom:30px;">${product.description}</p>
+                        
+                        ${isEcommerce 
+                            ? `<div class="detail-price">₹${product.price.toLocaleString()}<span> incl. GST</span></div>
+                               <button class="btn btn-primary" onclick="window.cartLogic.addToCart('${product.id}')" style="height:55px; padding:0 40px; font-size:1.1rem; margin-bottom:40px;">
+                                   <i class="fas fa-cart-plus"></i> Add to Cart
+                               </button>`
+                            : `<div class="quote-needed" style="font-size:1.4rem; margin-bottom:30px;">Request Quote for Industrial Price</div>`
+                        }
+
+                        <div class="detail-section">
+                            <h3><i class="fas fa-star"></i> Key Features</h3>
+                            <ul class="feature-list">
+                                ${product.features.map(f => `<li><i class="fas fa-check"></i> ${f}</li>`).join('')}
+                            </ul>
+                        </div>
+
+                        ${product.specs ? `
+                            <div class="detail-section">
+                                <h3><i class="fas fa-list"></i> Specifications</h3>
+                                <table class="spec-table">
+                                    ${Object.entries(product.specs).map(([key, value]) => `
+                                        <tr>
+                                            <td>${key}</td>
+                                            <td>${value}</td>
+                                        </tr>
+                                    `).join('')}
+                                </table>
+                            </div>
+                        ` : ''}
+
+                        ${!isEcommerce ? `
+                            <div class="quote-form-card">
+                                <h4><i class="fas fa-file-invoice"></i> Inquiry for ${product.name}</h4>
+                                <form onsubmit="event.preventDefault(); alert('Your inquiry has been sent! Our engineers will contact you.'); window.location.href='index.html';">
+                                    <div class="form-row">
+                                        <input type="text" placeholder="Your Name" required>
+                                        <input type="text" placeholder="Company Name" required>
+                                    </div>
+                                    <div class="form-row">
+                                        <input type="tel" placeholder="Phone Number" required>
+                                        <input type="text" placeholder="Required Capacity (e.g. 1000 LPH)" required>
+                                    </div>
+                                    <textarea rows="3" placeholder="Additional Requirements" class="form-full" style="margin-bottom:15px; padding:10px; border-radius:6px; border:1px solid var(--border); font-family:inherit;"></textarea>
+                                    <button type="submit" class="btn btn-primary" style="width:100%;">Submit Inquiry</button>
+                                </form>
+                            </div>
+                        ` : ''}
+                    </div>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>
