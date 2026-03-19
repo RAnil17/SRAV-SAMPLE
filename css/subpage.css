@@ -1,0 +1,316 @@
+/* ==========================================================================
+   SRAV Products — Subpage Styles
+   ========================================================================== */
+
+/* Page Hero */
+.page-hero {
+    position: relative;
+    height: 420px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    margin-top: 80px;
+}
+
+.page-hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0,20,60,0.88) 0%, rgba(0,50,120,0.7) 100%);
+    z-index: 1;
+}
+
+.page-hero-content {
+    position: relative;
+    z-index: 2;
+    padding-bottom: 70px;
+    color: var(--white);
+}
+
+.page-hero-content h1 {
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    color: var(--white);
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+}
+
+.page-hero-content > p {
+    color: rgba(255,255,255,0.8);
+    font-size: 1.15rem;
+    max-width: 600px;
+}
+
+.page-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.65);
+    font-family: var(--font-head);
+    font-weight: 500;
+}
+
+.page-breadcrumb a {
+    color: rgba(255,255,255,0.65);
+    transition: var(--ease);
+}
+.page-breadcrumb a:hover { color: var(--white); }
+.page-breadcrumb i { font-size: 0.65rem; }
+
+/* Solutions Full Page Grid */
+.solutions-full-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.solution-detail-card {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 36px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 44px;
+    transition: var(--ease);
+    box-shadow: var(--shadow-sm);
+}
+
+.solution-detail-card:hover {
+    box-shadow: var(--shadow-md);
+    border-color: rgba(0,102,204,0.2);
+    transform: translateY(-4px);
+}
+
+.sdc-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    background: var(--blue-pale);
+    color: var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    border: 1px solid rgba(0,102,204,0.15);
+    flex-shrink: 0;
+    transition: var(--ease);
+}
+
+.solution-detail-card:hover .sdc-icon {
+    background: var(--grad-main);
+    color: var(--white);
+    border-color: transparent;
+}
+
+.sdc-content h3 {
+    font-size: 1.5rem;
+    color: var(--heading);
+    margin-bottom: 14px;
+}
+
+.sdc-content > p {
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 22px;
+}
+
+.solution-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 20px;
+    list-style: none;
+    margin: 0;
+}
+
+.solution-features li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: var(--body-text);
+}
+
+.solution-features li i { color: var(--green); font-size: 0.75rem; }
+
+/* Projects Gallery Page */
+.projects-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.project-gallery-card {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    position: relative;
+    box-shadow: var(--shadow-sm);
+    transition: var(--ease);
+}
+
+.project-gallery-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.project-gallery-card:hover img { transform: scale(1.07); }
+
+.project-gallery-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-6px);
+}
+
+.project-card-info {
+    padding: 22px;
+    background: var(--white);
+}
+
+.project-card-info .project-badge {
+    display: inline-block;
+    background: var(--blue-pale);
+    color: var(--blue);
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.project-card-info h4 { font-size: 1.05rem; color: var(--heading); margin-bottom: 6px; }
+.project-card-info p { font-size: 0.88rem; color: var(--muted); }
+
+/* Services Detail */
+.services-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+}
+
+.service-detail-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 44px;
+    transition: var(--ease);
+    box-shadow: var(--shadow-sm);
+    border-left: 4px solid transparent;
+}
+
+.service-detail-card:hover {
+    border-left-color: var(--blue);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(0,102,204,0.1);
+}
+
+.service-detail-card .service-icon-wrap {
+    margin-bottom: 28px;
+}
+
+.service-detail-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 14px;
+}
+
+.service-detail-card p {
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.service-detail-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.service-detail-card ul li {
+    font-size: 0.9rem;
+    color: var(--body-text);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.service-detail-card ul li i { color: var(--green); font-size: 0.75rem; }
+
+/* Contact Page */
+.contact-page-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 70px;
+    align-items: start;
+}
+
+.contact-map-placeholder {
+    background: var(--off-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    color: var(--muted);
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact-map-placeholder i { font-size: 3rem; color: var(--blue-light); }
+
+/* Responsive */
+@media (max-width: 1023px) {
+    .container { padding: 0 40px; }
+    .solution-detail-card { grid-template-columns: 1fr; padding: 30px; }
+    .sdc-icon { width: 60px; height: 60px; font-size: 1.5rem; }
+    .services-detail-grid { grid-template-columns: 1fr; }
+    .projects-gallery { grid-template-columns: repeat(2, 1fr); }
+    .contact-page-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
+@media (max-width: 767px) {
+    .container { padding: 0 20px; }
+    .page-hero { 
+        height: 280px; 
+        margin-top: 70px; 
+        display: flex;
+        align-items: center;
+    }
+    .page-hero-content { padding-bottom: 0; text-align: center; width: 100%; }
+    .page-hero-content h1 { font-size: 2rem; margin-bottom: 8px; }
+    .page-hero-content > p { font-size: 0.95rem; margin: 0 auto; }
+    .page-breadcrumb { justify-content: center; font-size: 0.75rem; margin-bottom: 12px; }
+    
+    .solution-detail-card, .service-detail-card { 
+        padding: 24px; 
+        border-radius: var(--radius-md);
+        gap: 20px;
+    }
+    
+    .sdc-icon { width: 54px; height: 54px; font-size: 1.4rem; border-radius: 12px; }
+    .sdc-content h3 { font-size: 1.25rem; }
+    
+    .solution-features { grid-template-columns: 1fr; gap: 10px; }
+    .projects-gallery { grid-template-columns: 1fr; gap: 20px; }
+    
+    .project-gallery-card img { height: 220px; }
+    .project-card-info { padding: 18px; }
+}
+
+@media (max-width: 375px) {
+    .page-hero-content h1 { font-size: 1.75rem; }
+    .solution-detail-card, .service-detail-card { padding: 20px; }
+}
