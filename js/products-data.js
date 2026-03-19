@@ -1,5 +1,5 @@
 /* ==========================================================================
-   SRAV Products — Exhaustive Product Database (Visuals Enhanced)
+   SRAV Products — Exhaustive Product Database (STRICT UNIQUE VISUALS)
    ========================================================================== */
 
 const productsData = [
@@ -22,7 +22,7 @@ const productsData = [
         category: "Water Treatment",
         type: "industrial",
         mode: "industrial",
-        image: "assets/Aqua-Ultra-Water-Purifiers-3-600x600.jpg",
+        image: "assets/product-commercial-ro-unique.png",
         description: "Compact RO systems for offices, schools, and small hospitals.",
         features: ["Multi-stage Purification", "Compact Design", "Low Maintenance"],
         specs: { "Capacity": "50/100/250 LPH", "Pre-filtration": "Sand & Carbon", "Post-RO": "UV Sterilization" }
@@ -59,7 +59,7 @@ const productsData = [
         category: "Water Treatment",
         type: "industrial",
         mode: "industrial",
-        image: "assets/project-showcase.png",
+        image: "assets/product-iron-removal-unique.png",
         description: "Advanced oxidation and filtration for high iron content water.",
         features: ["Manganese Zeolite Media", "Automated Backwash", "Odor Removal"]
     },
@@ -69,7 +69,7 @@ const productsData = [
         category: "Water Treatment",
         type: "industrial",
         mode: "industrial",
-        image: "assets/Industrial-RO-Plant-Installation-Checklist-1080x400.webp",
+        image: "assets/product-dm-plant-unique.png",
         description: "Two-bed and mixed-bed ion exchange for ultra-pure water.",
         features: ["Dual Bed System", "Conductivity Monitoring", "FRP/RLP Construction"]
     },
@@ -80,7 +80,7 @@ const productsData = [
         type: "domestic",
         mode: "ecommerce",
         price: 7800,
-        image: "assets/Aqua-Ultra-Water-Purifiers-3-600x600.jpg",
+        image: "assets/product-uv-purifier-unique.png",
         description: "High-intensity UV-C sterilization for pathoghen-free water.",
         features: ["Stainless Steel Chamber", "High-intensity UV Lamp", "Fail-safe Solenoid Valve"]
     },
@@ -104,7 +104,7 @@ const productsData = [
         category: "Wastewater Solutions",
         type: "industrial",
         mode: "industrial",
-        image: "assets/Aqua-Ultra-Water-Purifiers-3-600x600.jpg",
+        image: "assets/product-industrial-etp-unique.png",
         description: "Chemical and physical treatment for industrial process water.",
         features: ["Heavy Metal Removal", "Color Removal", "ZLD Capability"]
     },
@@ -114,7 +114,7 @@ const productsData = [
         category: "Wastewater Solutions",
         type: "industrial",
         mode: "industrial",
-        image: "assets/project-showcase.png",
+        image: "assets/product-industrial-wastewater.png",
         description: "Custom-engineered systems for specialized industrial discharge."
     },
 
@@ -135,7 +135,7 @@ const productsData = [
         category: "Sterilization",
         type: "industrial",
         mode: "industrial",
-        image: "assets/product-disinfection-cabinet.png",
+        image: "assets/images.jpg",
         description: "Medical-grade storage with continuous UV sterilization."
     },
     {
@@ -144,7 +144,7 @@ const productsData = [
         category: "Sterilization",
         type: "industrial",
         mode: "industrial",
-        image: "assets/Gemini_Generated_Image_hc7j6hhc7j6hhc7j.png",
+        image: "assets/project-showcase.png",
         description: "Mobile UV robots and hand-held sterilization units."
     },
 
@@ -167,7 +167,7 @@ const productsData = [
         category: "Waste Management",
         type: "industrial",
         mode: "industrial",
-        image: "assets/OWC-Machine-1024x768.jpg",
+        image: "assets/product-bins.png",
         description: "Rapid fermentation system for large kitchens and hotels."
     },
     {
@@ -177,7 +177,7 @@ const productsData = [
         type: "domestic",
         mode: "ecommerce",
         price: 6500,
-        image: "assets/product-bins.png",
+        image: "assets/Aqua-Ultra-Water-Purifiers-3-600x600.jpg",
         description: "Color-coded 3-bin system for efficient source segregation.",
         features: ["Durable HDPE", "Foot Pedal Operation", "Clear Signage"]
     },
@@ -201,7 +201,7 @@ const productsData = [
         category: "Appliances",
         type: "industrial",
         mode: "industrial",
-        image: "assets/product-ice-machine.png",
+        image: "assets/about-engineers.png",
         description: "Heavy-duty block and flake ice generators for hospitality."
     },
     {
@@ -222,7 +222,7 @@ const productsData = [
         type: "domestic",
         mode: "ecommerce",
         price: 9800,
-        image: "assets/product-cooler.png",
+        image: "assets/services-engineers.png",
         description: "Glass-lined storage heater with high energy efficiency.",
         features: ["Hard Water Protection", "Digital Display", "8 Bar Pressure"]
     },
@@ -232,7 +232,7 @@ const productsData = [
         category: "Appliances",
         type: "industrial",
         mode: "industrial",
-        image: "assets/product-cooler.png",
+        image: "assets/background-video.mp4.mp4",
         description: "Wholesale supply of kitchen, cleaning, and utility appliances."
     },
 
@@ -252,7 +252,7 @@ const productsData = [
         category: "Automation & Electrical",
         type: "industrial",
         mode: "industrial",
-        image: "assets/product-automation-panel-new.png",
+        image: "assets/product-automation-panel.png",
         description: "Intelligent process control boards for water plants.",
         features: ["Schneider/ABB Components", "HMI Visuals", "IoT Enabled"]
     },
@@ -263,7 +263,7 @@ const productsData = [
         type: "industrial",
         mode: "industrial",
         isNew: true,
-        image: "assets/product-automation-panel-new.png",
+        image: "assets/logo.jpeg",
         description: "Smart lighting, security, and climate control for luxury residences."
     },
     {
@@ -272,7 +272,7 @@ const productsData = [
         category: "Automation & Electrical",
         type: "industrial",
         mode: "industrial",
-        image: "assets/Gemini_Generated_Image_hc7j6hhc7j6hhc7j.png",
+        image: "assets/product-automation-robotics.png",
         description: "Full factory automation using robotics and smart sensors."
     },
 
@@ -292,7 +292,7 @@ const productsData = [
         category: "ESD Solutions",
         type: "industrial",
         mode: "industrial",
-        image: "assets/product-esd-bench.png",
+        image: "assets/product-softener.png",
         description: "Ergonomic furniture with grounded surfaces and wrist strap points."
     },
     {
@@ -302,7 +302,7 @@ const productsData = [
         type: "domestic",
         mode: "ecommerce",
         price: 4200,
-        image: "assets/product-esd-bench.png",
+        image: "assets/product-ro.png",
         description: "Heat resistant rubber mat for desktop electronic repairs.",
         features: ["Heat Resistant", "Dual Layer Dissipative", "Size: 2ft x 4ft"]
     },
@@ -313,7 +313,7 @@ const productsData = [
         type: "domestic",
         mode: "ecommerce",
         price: 1500,
-        image: "assets/product-esd-bench.png",
+        image: "assets/Industrial-RO-Plant-Installation-Checklist-1080x400.webp",
         description: "Complete kit of wrist straps, grounding cords, and antistatic brushes."
     }
 ];

@@ -1765,18 +1765,60 @@ select.form-control option {
 /* --------------------------------------------------------------------------
    22. Hero Video Cinematic Zoom
    -------------------------------------------------------------------------- */
+.hero {
+    position: relative;
+    min-height: 85vh; /* Standardized height */
+    display: flex;
+    align-items: center;
+    padding: 100px 0;
+    overflow: hidden;
+    background: #0a1628; /* Fallback */
+}
+
 .hero-video-wrap {
     position: absolute;
-    inset: 0;
-    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     z-index: 0;
 }
 
-.hero-video-wrap .hero-video {
+.hero-video {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    opacity: 0.5; /* Better text contrast */
     animation: heroZoom 18s ease-in-out infinite alternate;
+}
+
+.hero-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(10,22,40,0.95), rgba(10,22,40,0.7));
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.hero-badge {
+    margin-bottom: 25px;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 5vw, 4.2rem);
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    font-size: 1.15rem;
+    max-width: 600px;
+    margin-bottom: 40px;
+    opacity: 0.9;
 }
 
 @keyframes heroZoom {
@@ -2193,57 +2235,17 @@ select.form-control option {
     .section-header { margin-bottom: 30px; }
     .section-subtitle { font-size: 0.9rem; line-height: 1.5; color: var(--muted); }
     
-    /* Hero Mobile Refinement */
+    /* Mobile Sections Spacing */
+    section {
+        padding: 60px 0 !important; /* Proper breathing space */
+    }
+
     .hero { 
-        min-height: auto; 
-        padding: 120px 0 60px; 
-        background: var(--grad-hero);
+        min-height: 80vh; 
+        padding: 120px 0 80px; 
     }
     
-    .hero-video-wrap { 
-        display: block !important; /* Re-enable video */
-        opacity: 0.6; /* Lower opacity for better readability */
-    }
-    
-    .hero-title { 
-        font-size: 2.6rem; 
-        letter-spacing: -0.5px; 
-        line-height: 1.15;
-    }
-    
-    .hero-subtitle { 
-        font-size: 1rem; 
-        margin-bottom: 32px; 
-        line-height: 1.6;
-    }
-    
-    .hero-cta { 
-        flex-direction: column; 
-        width: 100%; 
-        gap: 12px;
-    }
-    
-    .btn { 
-        width: 100%; 
-        padding: 16px 24px; 
-        font-size: 0.9rem;
-    }
-    
-    .hero-stats { 
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); 
-        width: 100%; 
-        padding: 15px; 
-        gap: 10px;
-        background: rgba(255,255,255,0.05);
-    }
-    
-    .hstat-divider { display: none; }
-    .hstat { 
-        padding: 12px 8px; 
-        border: 1px solid rgba(255,255,255,0.1); 
-        border-radius: var(--radius-sm); 
-    }
+    .hero-stats { display: none !important; } /* Hidden as per request */
     
     .hstat-num { font-size: 1.4rem; }
     .hstat-label { font-size: 0.65rem; }
